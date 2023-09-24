@@ -1,4 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveDonationsToLocalStorage } from "../LocalStorage/LocalStorage";
 
 const DonationDetails = () => {
 
@@ -7,6 +10,11 @@ const DonationDetails = () => {
     const idInt = parseInt(id)
 
     const donationDetail = donationDetails.find(donationDetail => donationDetail.id === idInt)
+
+    const handleMakeDonate = () => {
+        saveDonationsToLocalStorage(idInt)
+        toast("Your donation is Successful.")
+    }
 
     const {
         picture,
@@ -24,14 +32,18 @@ const DonationDetails = () => {
 
                 <div className="py-6 px-4 bg-opacity-60 bg-black absolute bottom-0 w-full">
 
-                    <button className="text-white font-normal px-3 py-2 rounded " style={{ backgroundColor: button_color }}>Donate ${price}</button>
+                    <button onClick={handleMakeDonate}
+                        className="text-white font-normal px-3 py-2 rounded " style={{ backgroundColor: button_color }}>Donate ${price}</button>
 
                 </div>
             </div>
 
             <h2 className="text-2xl font-bold mt-5">{title}</h2>
             <p className="my-4 text-sm text-justify">{description}</p>
+
+            <ToastContainer></ToastContainer>
         </div>
+
     );
 };
 
