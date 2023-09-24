@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const Category = ({ category }) => {
 
-    const { picture, title, category_type, card_bg, text_color, category_bg } = category
+    const { id, picture, title, category_type, card_bg, text_color, category_bg } = category
+
+    const navigate = useNavigate()
+
+    const handleDonationDetails = () => {
+        navigate(`/details/${id}`)
+    }
 
     return (
         <div>
-            <div style={{ backgroundColor: card_bg }} className='mt-10 rounded-md' >
+            <div onClick={handleDonationDetails} style={{ backgroundColor: card_bg }} className='mt-10 rounded-md' >
                 <img className='w-full' src={picture} alt="" />
 
                 <div className='px-4 py-3'>
