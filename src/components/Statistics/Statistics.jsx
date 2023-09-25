@@ -27,12 +27,12 @@ const Statistics = () => {
         }
     }, [statisticsTotal]);
 
-    const currentPrice = donations.reduce(
+    const currentPrice = donations?.reduce(
         (previous, current) => previous + current.price,
         0
     );
 
-    const totalPrice = statisticsTotal.reduce(
+    const totalPrice = statisticsTotal?.reduce(
         (previous, current) => previous + current.price,
         0
     );

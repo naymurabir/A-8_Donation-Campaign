@@ -2,11 +2,9 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt1, HiMenuAlt4 } from 'react-icons/hi';
 import './Header.css'
-import logo from '../../../public/Logo.png'
 
 
 const Header = () => {
-
 
     const [open, setOpen] = useState(false)
 
@@ -21,7 +19,7 @@ const Header = () => {
             <div className="flex justify-between items-center">
 
                 <div>
-                    <img className="w-40" src={logo} alt="" />
+                    <img className="w-40" src="https://i.ibb.co/pzXdG9W/Logo.png" alt="" />
                 </div>
 
                 <div className="relative" >

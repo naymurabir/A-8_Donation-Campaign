@@ -4,7 +4,6 @@ import Category from "../Category/Category";
 
 
 const Categories = ({ searchCategory }) => {
-    console.log(searchCategory);
 
     const [categories, setCategories] = useState([])
 
