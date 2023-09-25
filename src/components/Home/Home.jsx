@@ -6,7 +6,7 @@ import Categories from "../Categories/Categories";
 
 const Home = () => {
 
-    const [searchCategory, setSearchCategory] = useState(null)
+    const [searchCategory, setSearchCategory] = useState('')
 
     const handleSearchCategory = () => {
         const searchText = document.getElementById('search').value

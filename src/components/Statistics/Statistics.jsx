@@ -75,11 +75,12 @@ const Statistics = () => {
                 <PieChart width={300} height={300}>
                     <Pie
                         data={data}
+                        dataKey={(entry) => entry.value}
                         cy="currentPrice"
                         cx="totalPrice"
                         labelLine={false}
                         label={renderCustomizedLabel}
-                        outerRadius={80}
+                        outerRadius={100}
                         fill="#8884d8"
                     >
                         {data.map((entry, index) => (

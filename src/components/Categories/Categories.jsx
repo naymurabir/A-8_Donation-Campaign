@@ -42,7 +42,7 @@ const Categories = ({ searchCategory }) => {
 };
 
 Categories.propTypes = {
-    searchCategory: PropTypes.object.isRequired
+    searchCategory: PropTypes.string.isRequired
 }
 
 export default Categories;
