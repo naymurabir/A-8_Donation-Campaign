@@ -70,23 +70,41 @@ const Statistics = () => {
         );
     };
     return (
-        <div className="flex justify-center items-center">
+        <div>
+            <div className="flex justify-center items-center">
 
-            <PieChart width={400} height={400}>
-                <Pie
-                    data={data}
-                    cy="currentPrice"
-                    cx="totalPrice"
-                    labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={80}
-                    fill="#8884d8"
-                >
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={strokes[index % strokes.length]} />
-                    ))}
-                </Pie>
-            </PieChart>
+                <PieChart width={300} height={300}>
+                    <Pie
+                        data={data}
+                        cy="currentPrice"
+                        cx="totalPrice"
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        outerRadius={80}
+                        fill="#8884d8"
+                    >
+                        {data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={strokes[index % strokes.length]} />
+                        ))}
+                    </Pie>
+                </PieChart>
+            </div>
+
+
+            <div className="flex justify-center items-center gap-4">
+
+                <h3>Your donation</h3>
+                <div className="bg-[#00C49F] text-[#00C49F] text-sm h-[18px]">
+                    <p>your_donation</p>
+                </div>
+
+                <div className="flex justify-center items-center gap-2">
+                    <h3>Total Donation</h3>
+                    <div className="bg-[#FF444A] text-[#FF444A] text-sm h-[18px]">
+                        <p>total_donation</p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
