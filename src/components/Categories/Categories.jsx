@@ -1,16 +1,37 @@
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import Category from "../Category/Category";
 
 
-const Categories = () => {
+const Categories = ({ searchCategory }) => {
+    console.log(searchCategory);
 
     const [categories, setCategories] = useState([])
 
+    const [category, setCategory] = useState([])
+
+
     useEffect(() => {
-        fetch('categories.json')
+        fetch("/categories.json")
             .then(response => response.json())
-            .then(data => setCategories(data))
-    }, [])
+            .then((data) => {
+                setCategories(data);
+                setCategory(data);
+            });
+    }, []);
+
+    useEffect(() => {
+        if (searchCategory) {
+            const filterSearchText = category.filter(
+                (categories) => categories.category_type === searchCategory
+            );
+            setCategories(filterSearchText);
+            console.log(filterSearchText);
+        } else {
+            setCategories(categories);
+        }
+    }, []);
+
 
 
     return (
@@ -23,5 +44,10 @@ const Categories = () => {
         </div>
     );
 };
+
+Categories.propTypes = {
+    searchCategory: PropTypes.object.isRequired
+}
+
 
 export default Categories;

@@ -1,13 +1,22 @@
+import { useState } from "react";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
 
 
 
 const Home = () => {
+
+    const [searchCategory, setSearchCategory] = useState(null)
+
+    const handleSearchCategory = () => {
+        const searchText = document.getElementById('search').value
+        setSearchCategory(searchText);
+    }
+
     return (
         <div>
-            <Banner></Banner>
-            <Categories></Categories>
+            <Banner handleSearchCategory={handleSearchCategory}></Banner>
+            <Categories searchCategory={searchCategory}></Categories>
         </div>
     );
 };
