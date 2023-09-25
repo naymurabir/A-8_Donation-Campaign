@@ -39,7 +39,6 @@ const Donation = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

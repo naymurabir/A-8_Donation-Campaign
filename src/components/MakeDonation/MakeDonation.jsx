@@ -9,7 +9,7 @@ const MakeDonation = ({ donate }) => {
         <div>
             <div style={{ backgroundColor: card_bg }} className='flex items-center gap-4 rounded-md'>
                 <div>
-                    <img className='w-32 md:w-52 h-40 md:h-36 ' src={picture} alt="" />
+                    <img className='w-32 md:w-44 h-40 md:h-36 ' src={picture} alt="" />
                 </div>
 
                 <div className='p-3 md:p-0'>
@@ -20,9 +20,7 @@ const MakeDonation = ({ donate }) => {
 
                     <button className='px-2 py-1 rounded text-white' style={{ backgroundColor: text_color }}>View Details</button>
                 </div>
-
             </div>
-
         </div>
     );
 };

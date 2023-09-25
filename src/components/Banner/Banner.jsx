@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Banner = ({ handleSearchCategory }) => {
     return (
 
-        <div className="hero h-[400px] object-cover" style={{ backgroundImage: 'url(https://i.ibb.co/6nMKLGW/team.jpg)' }}>
+        <div className="hero h-[400px] rounded" style={{ backgroundImage: 'url(https://i.ibb.co/6nMKLGW/team.jpg)' }}>
             <div className="hero-overlay bg-opacity-80 bg-white"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">

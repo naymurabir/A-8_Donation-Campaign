@@ -22,7 +22,6 @@ const Statistics = () => {
                 );
                 exists.push(makeDonation);
             }
-
             setDonations(exists);
         }
     }, [statisticsTotal]);
@@ -91,16 +90,16 @@ const Statistics = () => {
             </div>
 
 
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-2">
 
                 <h3>Your donation</h3>
-                <div className="bg-[#00C49F] text-[#00C49F] text-sm h-[18px]">
+                <div className="bg-[#00C49F] text-[#00C49F] text-sm h-[18px] rounded">
                     <p>your_donation</p>
                 </div>
 
-                <div className="flex justify-center items-center gap-2">
+                <div className="flex flex-col md:flex-row justify-center items-center gap-2">
                     <h3>Total Donation</h3>
-                    <div className="bg-[#FF444A] text-[#FF444A] text-sm h-[18px]">
+                    <div className="bg-[#FF444A] text-[#FF444A] text-sm h-[18px] rounded">
                         <p>total_donation</p>
                     </div>
                 </div>

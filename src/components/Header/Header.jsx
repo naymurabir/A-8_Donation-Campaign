@@ -23,7 +23,7 @@ const Header = () => {
                 </div>
 
                 <div className="relative" >
-                    <div className={`flex  flex-col md:flex-row absolute md:static duration-1000 px-2 py-3 text-black ${open ? 'top-5  -left-11 z-10' : ' -left-11 -top-40'}`}>
+                    <div className={`flex flex-col md:flex-row absolute md:static duration-1000 px-2 py-3 text-white md:text-black bg-black md:bg-white ${open ? 'top-6  -left-11 z-10' : ' -left-11 -top-40'}`}>
 
                         <NavLink className="mr-6 text-lg font-semibold" to="/">Home</NavLink>
 

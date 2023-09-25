@@ -6,9 +6,7 @@ import Category from "../Category/Category";
 const Categories = ({ searchCategory }) => {
 
     const [categories, setCategories] = useState([])
-
     const [category, setCategory] = useState([])
-
 
     useEffect(() => {
         fetch("/categories.json")
@@ -30,7 +28,6 @@ const Categories = ({ searchCategory }) => {
             setCategories(categories);
         }
     }, [category, searchCategory]);
-
 
 
     return (
