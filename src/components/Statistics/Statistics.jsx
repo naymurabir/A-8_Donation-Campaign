@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { PieChart, Pie, Cell, } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import { getStoredDonations } from "../LocalStorage/LocalStorage";
 
 
@@ -37,8 +37,8 @@ const Statistics = () => {
     );
 
     const data = [
-        { id: 1, name: "currentPrice", value: currentPrice },
-        { id: 2, name: "totalPrice", value: totalPrice },
+        { id: 1, name: "currentDonation", value: currentPrice },
+        { id: 2, name: "totalDonation", value: totalPrice },
     ];
 
     const strokes = ["#00C49F", "#FF444A",];
@@ -76,8 +76,8 @@ const Statistics = () => {
                     <Pie
                         data={data}
                         dataKey={(entry) => entry.value}
-                        cy="currentPrice"
-                        cx="totalPrice"
+                        cy="currentDonation"
+                        cx="totalDonation"
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={100}
@@ -87,24 +87,11 @@ const Statistics = () => {
                             <Cell key={`cell-${index}`} fill={strokes[index % strokes.length]} />
                         ))}
                     </Pie>
+                    <Tooltip></Tooltip>
+                    <Legend></Legend>
                 </PieChart>
             </div>
 
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-2">
-
-                <h3>Your donation</h3>
-                <div className="bg-[#00C49F] text-[#00C49F] text-sm h-[18px] rounded">
-                    <p>your_donation</p>
-                </div>
-
-                <div className="flex flex-col md:flex-row justify-center items-center gap-2">
-                    <h3>Total Donation</h3>
-                    <div className="bg-[#FF444A] text-[#FF444A] text-sm h-[18px] rounded">
-                        <p>total_donation</p>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };
