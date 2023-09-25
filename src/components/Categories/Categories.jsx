@@ -30,7 +30,7 @@ const Categories = ({ searchCategory }) => {
         } else {
             setCategories(categories);
         }
-    }, []);
+    }, [category, searchCategory]);
 
 
 
@@ -48,6 +48,5 @@ const Categories = ({ searchCategory }) => {
 Categories.propTypes = {
     searchCategory: PropTypes.object.isRequired
 }
-
 
 export default Categories;

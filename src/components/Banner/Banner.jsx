@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 const Banner = ({ handleSearchCategory }) => {
     return (
 
@@ -10,10 +9,10 @@ const Banner = ({ handleSearchCategory }) => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-2xl font-bold text-black">I Grow By Helping People In Need</h1>
 
-                    <input id='search' className="px-2 py-1 bg-white border border-gray-300 rounded-md" type="text" placeholder="Search Here..." />
+                    <input id='search' className="px-3 py-2 bg-white text-black border border-gray-300 rounded-md" type="text" placeholder="Search Here..." />
 
                     <button onClick={handleSearchCategory}
-                        className="text-white bg-red-500 font-bold, px-2 py-1 rounded-md">Search</button>
+                        className="text-white bg-red-500 font-bold, px-3 py-2 rounded-md">Search</button>
                 </div>
             </div>
         </div>
