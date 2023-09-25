@@ -9,7 +9,7 @@ const Banner = ({ handleSearchCategory }) => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-2xl font-bold text-black">I Grow By Helping People In Need</h1>
 
-                    <input id='search' className="px-3 py-2 bg-white text-black border border-gray-300 rounded-md" type="text" placeholder="Search Here..." />
+                    <input id='search' className="px-3 py-2 outline-none bg-white text-black border border-gray-300 rounded-md" type="text" placeholder="Search Here..." />
 
                     <button onClick={handleSearchCategory}
                         className="text-white bg-red-500 font-bold, px-3 py-2 rounded-md">Search</button>
