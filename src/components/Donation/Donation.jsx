@@ -8,7 +8,7 @@ const Donation = () => {
 
     const donations = useLoaderData()
     const [donated, setDonated] = useState([])
-    const [dataLength, setDataLength] = useState(true)
+    const [dataLength, setDataLength] = useState(3)
 
     useEffect(() => {
         const storedDonations = getStoredDonations()
@@ -32,9 +32,11 @@ const Donation = () => {
                     dataLength ? donated.slice(0, 4).map((donate, idx) => <MakeDonation key={idx} donate={donate}></MakeDonation>) : donated.map((donate, idx) => <MakeDonation key={idx} donate={donate}></MakeDonation>)
                 }
             </div>
-            <div className={`flex justify-center mt-5 ${dataLength ? 'block' : 'hidden'}`}>
-                <button onClick={() => setDataLength(!dataLength)}
-                    className='bg-green-700 px-3 py-2 text-white font-semibold rounded-md'>See All</button>
+            <div className={`${donated.length >= 3 ? 'block' : 'hidden'}`}>
+                <div className={`flex justify-center mt-5 ${donated.length === dataLength ? 'hidden' : 'block'}`}>
+                    <button onClick={() => setDataLength(donated.length)}
+                        className='bg-green-700 px-3 py-2 text-white font-semibold rounded-md'>See All</button>
+                </div>
             </div>
         </div>
 
